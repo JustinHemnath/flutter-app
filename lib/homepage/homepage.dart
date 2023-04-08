@@ -1,6 +1,7 @@
 import "package:flutter/material.dart";
 import "package:flutter_app/controllers/practice_controller.dart";
 import "package:get/get.dart";
+import '../practice/practicepage.dart';
 
 class Homepage extends StatelessWidget {
   Homepage({super.key});
@@ -21,14 +22,16 @@ class Homepage extends StatelessWidget {
             children: [
               Column(
                 children: [
-                  Obx(() => Text(
-                        practicecontroller.count.value.toString(),
-                      )),
                   ElevatedButton(
                       onPressed: () {
                         practicecontroller.increase();
                       },
-                      child: Text("Increase"))
+                      child: Text("Increase")),
+                  ElevatedButton(
+                      onPressed: () {
+                        Get.to(Practicepage());
+                      },
+                      child: Text("Practice page"))
                 ],
               ),
             ],
