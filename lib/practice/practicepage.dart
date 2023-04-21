@@ -12,10 +12,7 @@ class Practicepage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: CommonDrawer(),
-      appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(60),
-        child: CustomAppbar("PRACTICE"),
-      ),
+      appBar: CustomAppbar(appbarTitle: "PRACTICE"),
       body: Textwidget(),
     );
   }

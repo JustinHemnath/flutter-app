@@ -1,5 +1,6 @@
 import "package:flutter/material.dart";
 import "package:flutter_app/homepage/homepage.dart";
+import "package:flutter_app/modules/users/screens/user.screen.dart";
 import "package:flutter_app/practice/practicepage.dart";
 import "package:get/get.dart";
 
@@ -14,6 +15,10 @@ class CommonDrawer extends StatelessWidget {
     {
       "pageTitle": "Practice",
       "route": Practicepage(),
+    },
+    {
+      "pageTitle": "Users",
+      "route": Users(),
     },
   ];
 

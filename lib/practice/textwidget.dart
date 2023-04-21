@@ -11,8 +11,12 @@ class _TextwidgetState extends State<Textwidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 40.0, horizontal: 40.0),
-      child: TextField(),
+      padding: EdgeInsets.all(40.0),
+      child: TextFormField(
+        decoration: InputDecoration(
+          labelText: "Enter your name",
+        ),
+      ),
     );
   }
 }

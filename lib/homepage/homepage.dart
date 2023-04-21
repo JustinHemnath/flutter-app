@@ -15,10 +15,7 @@ class Homepage extends StatelessWidget {
     PracticeController practicecontroller = Get.put(PracticeController());
 
     return Scaffold(
-      appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(60),
-        child: CustomAppbar("HOME"),
-      ),
+      appBar: CustomAppbar(appbarTitle: "HOME"),
       drawer: CommonDrawer(),
       body: Container(
         width: double.infinity,
