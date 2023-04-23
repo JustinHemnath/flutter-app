@@ -2,12 +2,14 @@ import 'dart:convert';
 
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
+import "../../../Constants.dart";
 
 class UsersController extends GetxController {
   RxList usersData = [].obs;
+  static const baseURL = Constants.baseURL;
 
   Future<void> fetchUsers() async {
-    const url = "http://192.168.1.2:3001/getusers";
+    const url = "$baseURL/getusers";
     final response = await http.get(Uri.parse(url));
 
     var responseData = jsonDecode(response.body);
@@ -18,7 +20,7 @@ class UsersController extends GetxController {
     if (enteredName == null || enteredName == "") {
       return;
     } else {
-      const url = "http://192.168.1.2:3001/user";
+      const url = "$baseURL/user";
       final response = await http.post(
         Uri.parse(url),
         headers: <String, String>{
@@ -35,7 +37,7 @@ class UsersController extends GetxController {
     if (name == null || name == "") {
       return;
     } else {
-      const url = "http://192.168.1.2:3001/user";
+      const url = "$baseURL/user";
       final response = await http.delete(
         Uri.parse(url),
         headers: <String, String>{

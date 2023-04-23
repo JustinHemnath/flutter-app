@@ -26,7 +26,7 @@ class _UsersState extends State<Users> {
           children: [
             Container(
               height: 130.0,
-              padding: EdgeInsets.symmetric(vertical: 0, horizontal: 30),
+              padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 30),
               margin: const EdgeInsets.only(bottom: 30, top: 20),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -69,6 +69,14 @@ class _UsersState extends State<Users> {
                                 padding: const EdgeInsets.symmetric(
                                     horizontal: 0, vertical: 10),
                                 decoration: BoxDecoration(
+                                  boxShadow: const [
+                                    BoxShadow(
+                                      offset: Offset(1, 0),
+                                      spreadRadius: 1,
+                                      blurRadius: 5,
+                                      color: Color.fromRGBO(203, 203, 203, 1),
+                                    )
+                                  ],
                                   color: Colors.grey[200],
                                   borderRadius: const BorderRadius.all(
                                     Radius.circular(15),
