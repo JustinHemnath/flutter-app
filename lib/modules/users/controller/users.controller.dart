@@ -8,6 +8,10 @@ class UsersController extends GetxController {
   RxList usersData = [].obs;
   static const baseURL = Constants.baseURL;
 
+  UsersController() {
+    fetchUsers();
+  }
+
   Future<void> fetchUsers() async {
     const url = "$baseURL/getusers";
     final response = await http.get(Uri.parse(url));
@@ -28,9 +32,9 @@ class UsersController extends GetxController {
         },
         body: jsonEncode(<String, String>{'name': enteredName}),
       );
-    }
 
-    fetchUsers();
+      usersData.value = jsonDecode(response.body);
+    }
   }
 
   Future<void> deleteUser({String? name}) async {
@@ -45,8 +49,8 @@ class UsersController extends GetxController {
         },
         body: jsonEncode(<String, String>{'name': name}),
       );
-    }
 
-    fetchUsers();
+      usersData.value = jsonDecode(response.body);
+    }
   }
 }
