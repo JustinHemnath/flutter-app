@@ -17,7 +17,7 @@ class _UsersState extends State<Users> {
   @override
   Widget build(BuildContext context) {
     UsersController usercontroller = Get.put(UsersController());
-    usercontroller.fetchUsers();
+    // usercontroller.fetchUsers();
 
     return Scaffold(
         appBar: CustomAppbar(appbarTitle: "Users List"),
